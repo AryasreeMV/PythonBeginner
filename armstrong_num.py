@@ -1,16 +1,19 @@
 number = input("Enter a number : ")
+# Get length of the input number
+length = len(number)
 
-power = len(number)
-arm = 0
+result = 0
+# Convert input value into integer
 num = int(number)
+
+# Iterating through the number until the last digit
 while(num>0):
-    # print(f"ARM : {arm}")
-    # print(f"Num : {num}")
-    # print("Power : ", power)
-    arm = arm + (num % 10) ** power
+    result = result + (num % 10) ** length
     num = num//10
 
-if(str(arm)==number):
+# Since num is now 0 use the variable 'number' to compare with 'result'
+
+if(str(result)==number):
     print(f"{number} is Armstrong!")
 else:
     print(f"{number} is not Armstrong!")
